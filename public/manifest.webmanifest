@@ -1,0 +1,19 @@
+{
+  "name": "Korean Master - 한글 마스터",
+  "short_name": "KoreanMaster",
+  "description": "Apprenez le coréen de zéro jusqu'à la conversation fluide. Hangeul, prononciation du Batchim, grammaire vivante et dialogues réels.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f8fafc",
+  "theme_color": "#4f46e5",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192 512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "language"]
+}

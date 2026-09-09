@@ -149,7 +149,7 @@ export const HangeulGrid: React.FC = () => {
                   {item.strokeCount} {item.strokeCount > 1 ? 'traits' : 'trait'}
                 </span>
                 <button
-                  onClick={(e) => toggleMastery(item.char, e)}
+                  onClick={(e: React.MouseEvent) => toggleMastery(item.char, e)}
                   title={isMastered ? 'Marqué comme maîtrisé' : 'Marquer comme appris'}
                   className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors cursor-pointer ${
                     isMastered
@@ -178,7 +178,7 @@ export const HangeulGrid: React.FC = () => {
                 <div className="flex items-center gap-1">
                   <AudioButton text={item.char} size="sm" />
                   <button
-                    onClick={(e) => {
+                    onClick={(e: React.MouseEvent) => {
                       e.stopPropagation();
                       setActiveChar(item);
                     }}

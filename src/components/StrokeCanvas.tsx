@@ -62,7 +62,7 @@ export const StrokeCanvas: React.FC<StrokeCanvasProps> = ({ charData, onClose })
 
     // Sauvegarder l'état pour undo
     const snapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
-    setHistory((prev) => [...prev.slice(-10), snapshot]);
+    setHistory((prev: ImageData[]) => [...prev.slice(-10), snapshot]);
 
     const { x, y } = getCoordinates(e);
     ctx.beginPath();
@@ -100,7 +100,7 @@ export const StrokeCanvas: React.FC<StrokeCanvasProps> = ({ charData, onClose })
 
     const prevSnapshot = history[history.length - 1];
     ctx.putImageData(prevSnapshot, 0, 0);
-    setHistory((prev) => prev.slice(0, -1));
+    setHistory((prev: ImageData[]) => prev.slice(0, -1));
   };
 
   const handleValidate = () => {
@@ -218,7 +218,7 @@ export const StrokeCanvas: React.FC<StrokeCanvasProps> = ({ charData, onClose })
                 Ordre & Sens des Traits
               </h4>
               <ul className="space-y-2">
-                {charData.strokeDirections.map((step, idx) => (
+                {charData.strokeDirections.map((step: string, idx: number) => (
                   <li
                     key={idx}
                     className="text-xs text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200/70 flex items-start gap-2"
